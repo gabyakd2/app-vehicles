@@ -1,7 +1,13 @@
-import Image from 'next/image'
+'use client'
+import Home from "./Home/Home";
+import Navbar from "./components/Navbar/Navbar";
+import { Button, Grid, Stack } from "@mui/material";
 
-export default function Home() {
+export default function App() {
   return (
-    <h1>Soy HOME</h1>
+    <div>
+      <Navbar />
+      <Home />
+    </div>
   )
 }
