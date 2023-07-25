@@ -45,7 +45,7 @@ export default function TemporaryDrawer() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {optionsMenu1.map((text, index) => (
+        {optionsMenu1.map((text) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
               <ListItemText primary={text} />
@@ -55,7 +55,7 @@ export default function TemporaryDrawer() {
       </List>
       <Divider />
       <List>
-        {optionsMenu2.map((text, index) => (
+        {optionsMenu2.map((text) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
               <ListItemText primary={text} />
@@ -65,7 +65,7 @@ export default function TemporaryDrawer() {
       </List>
       <Divider />
       <List>
-        {optionsMenu3.map((text, index) => (
+        {optionsMenu3.map((text) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
               <ListItemText primary={text} />
@@ -74,8 +74,8 @@ export default function TemporaryDrawer() {
         ))}
       </List>
       <Divider />
-      <List>
-        {optionsMenu4.map((text, index) => (
+      <List className="bg-stone-300">
+        {optionsMenu4.map((text) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
               <ListItemText primary={text} />
