@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, {useState} from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -10,11 +10,13 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
+import ListMenu from "./components/ListMenu";
 
 const pages: string[] = ["Modelos", "Ficha de modelo"];
 const settings: string[] = ["Profile", "Account", "Dashboard", "Logout"];
 
 function Navbar() {
+  const [viewList, setViewList] = useState<boolean>(false);
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
@@ -25,8 +27,8 @@ function Navbar() {
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElUser(event.currentTarget);
+  const handleOpenList = (event: React.MouseEvent<HTMLElement>) => {
+    setViewList(true);
   };
 
   const handleCloseNavMenu = () => {
@@ -129,15 +131,13 @@ function Navbar() {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
+            <Tooltip title="">
               <div className="flex align-items-center">
-                <p className="me-2 text-black">Menú</p>
-                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <MenuRoundedIcon color="action" />
-                </IconButton>
+                <p className="text-black mt-2">Menú</p>
+                  <ListMenu />
               </div>
             </Tooltip>
-            <Menu
+            {/* <Menu
               sx={{ mt: "45px" }}
               id="menu-appbar"
               anchorEl={anchorElUser}
@@ -158,7 +158,7 @@ function Navbar() {
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}
-            </Menu>
+            </Menu> */}
           </Box>
         </Toolbar>
       </Container>
