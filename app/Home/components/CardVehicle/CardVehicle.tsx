@@ -9,15 +9,15 @@ function CardVehicle ({name, year, price, photo}: Vehicle) {
       <CardActionArea>
         <CardContent>
           <Typography gutterBottom variant="h5" component="div" className='flex justify-center'>
-            Lizard
+            {name}
           </Typography>
           <div className='flex justify-around my-4'>
             <Typography variant="body2" color="text.secondary">
-              Año
+              {year}
             </Typography>
             <Divider orientation="vertical" flexItem />
             <Typography variant="body2" color="text.secondary">
-              Precio
+              {price}
             </Typography>
           </div>
         </CardContent>

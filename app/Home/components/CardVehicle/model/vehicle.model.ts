@@ -1,9 +1,9 @@
 export interface Vehicle {
   id: number;
   name: string;
-  segment: string;
+  segment?: string;
   year: number;
   price: number;
-  thumbnail: string;
-  photo: string;
+  thumbnail?: string;
+  photo?: string;
 }
