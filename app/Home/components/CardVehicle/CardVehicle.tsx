@@ -17,7 +17,7 @@ function CardVehicle ({name, year, price, photo}: Vehicle) {
             </Typography>
             <Divider orientation="vertical" flexItem />
             <Typography variant="body2" color="text.secondary">
-              {price}
+              $ {price}
             </Typography>
           </div>
         </CardContent>
