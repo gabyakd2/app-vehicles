@@ -5,7 +5,7 @@ import { Vehicle } from './model/vehicle.model';
 
 function CardVehicle ({name, year, price, photo}: Vehicle) {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 245 }}>
       <CardActionArea>
         <CardContent>
           <Typography gutterBottom variant="h5" component="div" className='flex justify-center'>
@@ -23,9 +23,9 @@ function CardVehicle ({name, year, price, photo}: Vehicle) {
         </CardContent>
         <CardMedia
           component="img"
-          height="140"
           image={photo}
           alt={name}
+          className="object-cover"
         />
       </CardActionArea>
     </Card>
