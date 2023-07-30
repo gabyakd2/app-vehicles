@@ -3,7 +3,6 @@ import { useQuery } from "react-query";
 import { Vehicle } from "../CardVehicle/model/vehicle.model";
 import CardVehicle from "../CardVehicle/CardVehicle";
 import { getVehicles } from "./services/getVehicles";
-import { Container } from "@mui/material";
 
 function CardList() {
   const { data, status } = useQuery("vehicle", getVehicles);
