@@ -6,4 +6,5 @@ export interface Vehicle {
   price: number;
   thumbnail?: string;
   photo?: string;
+  category?: string;
 }

@@ -1,25 +1,27 @@
 import React from "react";
-import { useQuery } from "react-query";
 import { Vehicle } from "../CardVehicle/model/vehicle.model";
 import CardVehicle from "../CardVehicle/CardVehicle";
-import { getVehicles } from "./services/getVehicles";
+import { FiltersState } from "../../Home";
 
-function CardList() {
-  const { data, status } = useQuery("vehicle", getVehicles);
+interface Props {
+  data: Vehicle[];
+  filters: FiltersState
+}
 
-  if (status === "loading") {
-    return <div>Loading...</div>;
-  }
+function CardList({data, filters}: Props) {
+  const aux = data
+// console.log(aux)
+  const filterVehicles = aux?.filter((vehicle) => (
+    (filters.category === "all" || vehicle.segment === filters.category) &&
+    (filters.orderBy === 0 || vehicle.price >= filters.orderBy)
+  ));
 
-  if (status === "error") {
-    return <div>Error</div>;
-  }
-
+// console.log(filterVehicles)
   return (
     <div className="flex justify-center my-10">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-16">
-        {data.length &&
-          data.map((vehicle: Vehicle) => (
+        {filterVehicles?.length &&
+          filterVehicles.map((vehicle: Vehicle) => (
             <CardVehicle
               id={vehicle.id}
               key={vehicle.id}
