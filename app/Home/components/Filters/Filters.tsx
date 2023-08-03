@@ -2,7 +2,7 @@ import { Container } from "@mui/material";
 import React from "react";
 import SelectOrder from "./components/SelectOrder";
 import { Button, Stack } from "@mui/material";
-import { FiltersState } from "../../model/filterState.model";
+import { FiltersState } from "../../models/filterState.model";
 
 interface Props {
     setFilters: React.Dispatch<React.SetStateAction<FiltersState>>;

@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from '@mui/material/Card';
 import {CardContent, Typography, CardActionArea, CardMedia, Divider } from '@mui/material';
-import { Vehicle } from './model/vehicle.model';
+import { Vehicle } from '../../models/vehicle.model';
 
 function CardVehicle ({name, year, price, photo}: Vehicle) {
   return (

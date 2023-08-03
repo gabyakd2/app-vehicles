@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useQuery } from "react-query";
 import { Container, Typography } from "@mui/material";
 import { getVehicles } from "../Home/services/getVehicles";
-import { FiltersState } from "./model/filterState.model";
+import { FiltersState } from "./models/filterState.model";
 import CardList from "./components/CardList/CardList";
 import Filters from "./components/Filters/Filters";
 
