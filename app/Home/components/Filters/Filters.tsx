@@ -2,31 +2,50 @@ import { Container } from "@mui/material";
 import React from "react";
 import SelectOrder from "./components/SelectOrder";
 import { Button, Stack } from "@mui/material";
-import { FiltersState } from "../../models/filterState.model";
+import { SetFilterProp } from "./model/setFilterProp";
 
-interface Props {
-    setFilters: React.Dispatch<React.SetStateAction<FiltersState>>;
-}
-
-function Filters({setFilters}: Props) {
-
-  const handleChangeSegment = (e: React.MouseEvent<HTMLButtonElement>) => {
+function Filters({ setFilters }: SetFilterProp) {
+  const handleChangeCategory = (category: string) => {
     setFilters((prev) => ({
       ...prev,
-      segment: 'todos',
+      category: category,
     }));
-  }
+  };
 
   return (
     <Container className="flex justify-between my-10">
-        <p className="mt-3">Filtrar por</p>
+      <p className="mt-3">Filtrar por</p>
       <Stack spacing={2} direction="row">
-        <Button className="normal-case text-base" variant="text" onClick={handleChangeSegment} >Todos</Button>
-        <Button className="normal-case text-base" variant="text">Autos</Button>
-        <Button className="normal-case text-base" variant="text">Pickups y Comerciales</Button>
-        <Button className="normal-case text-base" variant="text">SUVs y Crossovers</Button>
+        <Button
+          className="normal-case text-base"
+          variant="text"
+          onClick={() => handleChangeCategory("all")}
+        >
+          Todos
+        </Button>
+        <Button
+          className="normal-case text-base"
+          variant="text"
+          onClick={() => handleChangeCategory("Sedan")}
+        >
+          Autos
+        </Button>
+        <Button
+          className="normal-case text-base"
+          variant="text"
+          onClick={() => handleChangeCategory("Pickups y Comerciales")}
+        >
+          Pickups y Comerciales
+        </Button>
+        <Button
+          className="normal-case text-base"
+          variant="text"
+          onClick={() => handleChangeCategory("SUVs")}
+        >
+          SUVs y Crossovers
+        </Button>
       </Stack>
-        <SelectOrder />
+      <SelectOrder setFilters={setFilters}/>
     </Container>
   );
 }
