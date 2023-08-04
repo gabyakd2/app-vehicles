@@ -29,7 +29,7 @@ function CardList({ data, filters, status }: Props) {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-16">
         {filteredAndSorted?.length &&
           filteredAndSorted.map((vehicle: Vehicle) => (
-            <Link href={`/detailvehicle/${vehicle.id}`} key={vehicle.id}>
+            <Link href={`${vehicle.id}`} key={vehicle.id}>
               <CardVehicle
                 id={vehicle.id}
                 key={vehicle.id}
