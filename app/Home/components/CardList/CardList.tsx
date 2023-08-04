@@ -4,6 +4,7 @@ import CardVehicle from "../CardVehicle/CardVehicle";
 import { FiltersState } from "../../models/filterState.model";
 import { filterByCategory } from "./services/filterByCategory";
 import { sortByVehicles } from "./services/sortByVehicles";
+import Link from "next/link";
 
 interface Props {
   data: Vehicle[];
@@ -28,14 +29,16 @@ function CardList({ data, filters, status }: Props) {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-16">
         {filteredAndSorted?.length &&
           filteredAndSorted.map((vehicle: Vehicle) => (
-            <CardVehicle
-              id={vehicle.id}
-              key={vehicle.id}
-              name={vehicle.name}
-              photo={vehicle.photo}
-              year={vehicle.year}
-              price={vehicle.price}
-            />
+            <Link href={`/detailvehicle/${vehicle.id}`} key={vehicle.id}>
+              <CardVehicle
+                id={vehicle.id}
+                key={vehicle.id}
+                name={vehicle.name}
+                photo={vehicle.photo}
+                year={vehicle.year}
+                price={vehicle.price}
+              />
+            </Link>
           ))}
       </div>
     </div>
