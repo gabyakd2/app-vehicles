@@ -1,8 +1,8 @@
-'use client'
-import React from 'react'
-import DetailVehicle from './DetailVehicle/DetailVehicle'
-import Navbar from '../components/Navbar/Navbar'
-import Footer from '../components/Footer/Footer'
+"use client";
+import React from "react";
+import DetailVehicle from "./DetailVehicle/DetailVehicle";
+import Navbar from "../components/Navbar/Navbar";
+import Footer from "../components/Footer/Footer";
 
 function PageDetail() {
   return (
@@ -11,7 +11,7 @@ function PageDetail() {
       <DetailVehicle />
       <Footer />
     </div>
-  )
+  );
 }
 
-export default PageDetail
+export default PageDetail;
