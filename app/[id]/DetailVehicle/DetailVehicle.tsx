@@ -12,10 +12,18 @@ function DetailVehicle() {
   const { data, status } = useQuery<CartDetail, Error>("detailCart", () =>
     getDetailCart(id)
   );
+  if (status === "loading") {
+    return <span>Loading...</span>;
+  }
 
+  if (status === "error") {
+    return <span>Error</span>;
+  }
+// console.log(data)
   return (
   <div>
-    <TitleDetail />
+    {data && <TitleDetail data={data} />}
+    
   </div>
   );
 }
