@@ -25,7 +25,6 @@ function DetailVehicle() {
   <div>
     {data && <TitleDetail data={data} />}
     {data && <MechanicDetail data={data} />}
-    
   </div>
   );
 }

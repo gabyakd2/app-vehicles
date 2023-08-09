@@ -7,17 +7,25 @@ interface Props {
 }
 
 function MechanicDetail({ data }: Props) {
+  console.log(data)
   return (
     <div>
       <div>
-        {data.model_features.map((feature) => (
-          <div>
-            <p>{feature.name}</p>
-            {/* <Image src={feature.image} width={100} height={100} alt="img" /> */}
-          </div>
-        ))}
+        <Image
+          src={data.model_features[0].image}
+          alt="Image mechanic"
+          width={270}
+          height={100}
+        />
       </div>
-      <div></div>
+      <div>
+        <Image
+          src={data.model_features[1].image}
+          alt="Image mechanic"
+          width={270}
+          height={100}
+        />
+      </div>
     </div>
   );
 }
