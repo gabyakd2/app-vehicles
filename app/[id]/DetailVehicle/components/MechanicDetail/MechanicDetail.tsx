@@ -7,7 +7,7 @@ interface Props {
 }
 
 function MechanicDetail({ data }: Props) {
-  console.log(data)
+  // console.log(data)
   return (
     <div>
       <div>
