@@ -12,7 +12,7 @@ function MechanicDetail({ data }: Props) {
     <div>
       <div className="flex justify-around items-center mb-2">
         <div>
-          <p>{data.model_features[0].name}</p>
+          <p className="text-xl font-semibold">{data.model_features[0].name}</p>
           <p>{data.model_features[0].description}</p>
         </div>
         <Image
@@ -24,7 +24,7 @@ function MechanicDetail({ data }: Props) {
       </div>
       <div className="flex justify-around items-center mb-2">
         <div>
-          <p>{data.model_features[1].name}</p>
+          <p className="text-xl font-semibold">{data.model_features[1].name}</p>
           <p>{data.model_features[1].description}</p>
         </div>
         <Image
