@@ -10,7 +10,11 @@ function MechanicDetail({ data }: Props) {
   // console.log(data)
   return (
     <div>
-      <div>
+      <div className="flex justify-around items-center mb-2">
+        <div>
+          <p>{data.model_features[0].name}</p>
+          <p>{data.model_features[0].description}</p>
+        </div>
         <Image
           src={data.model_features[0].image}
           alt="Image mechanic"
@@ -18,7 +22,11 @@ function MechanicDetail({ data }: Props) {
           height={100}
         />
       </div>
-      <div>
+      <div className="flex justify-around items-center mb-2">
+        <div>
+          <p>{data.model_features[1].name}</p>
+          <p>{data.model_features[1].description}</p>
+        </div>
         <Image
           src={data.model_features[1].image}
           alt="Image mechanic"
