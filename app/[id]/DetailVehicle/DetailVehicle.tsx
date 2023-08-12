@@ -5,6 +5,7 @@ import { CartDetail } from "./models/cartDetail";
 import TitleDetail from "./components/TitleDetail/TitleDetail";
 import { usePathname } from 'next/navigation'
 import MechanicDetail from "./components/MechanicDetail/MechanicDetail";
+import CarouselDetail from "./components/CarouselDetail/CarouselDetail";
 
 function DetailVehicle() {
   const pathName = usePathname();
@@ -24,6 +25,7 @@ function DetailVehicle() {
   return (
   <div>
     {data && <TitleDetail data={data} />}
+    {data && <CarouselDetail data={data} />}
     {data && <MechanicDetail data={data} />}
   </div>
   );
