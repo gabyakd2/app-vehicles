@@ -2,17 +2,13 @@ import Image from "next/image";
 import React from "react";
 import { CartDetail } from "../../models/cartDetail";
 import { Container } from "@mui/material";
+import { cleanText } from "../../services/cleanText";
 
 interface Props {
   data: CartDetail;
 }
 
 function TitleDetail({ data }: Props) {
-  const cleanDescription = (description: string): string => {
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(description, "text/html");
-    return doc.body.textContent || "";
-  };
   // console.log(data);
   // const {photo} = data;
   return (
@@ -37,7 +33,7 @@ function TitleDetail({ data }: Props) {
             {data.name} {data.segment}
           </p>
           <p className="text-4xl font-bold mb-4">{data.title}</p>
-          <p className="text-xl">{cleanDescription(data.description)}</p>
+          <p className="text-xl">{cleanText(data.description)}</p>
         </div>
       </div>
     </Container>
