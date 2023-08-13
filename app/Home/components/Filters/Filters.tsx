@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Container } from "@mui/material";
 import SelectOrder from "./components/SelectOrder";
 import { Button, Stack, FormControl, InputLabel, NativeSelect } from "@mui/material";
-import { SetFilterProp } from "./model/setFilterProp";
+import { SetFilterProp } from "./models/setFilterProp";
 
 function Filters({ setFilters }: SetFilterProp) {
   const [isMobile, setIsMobile] = useState<boolean>(false);
@@ -32,13 +32,15 @@ function Filters({ setFilters }: SetFilterProp) {
       {isMobile ? (
         <FormControl>
           <InputLabel variant="standard" htmlFor="uncontrolled-native">
-          Ordenar por
+          Filtrar por
         </InputLabel>
-        <NativeSelect>
-          <option>Todos</option>
-          <option>Autos</option>
-          <option>Pickups y Comerciales</option>
-          <option>SUVs y Crossovers</option>
+        <NativeSelect
+          onChange={(e) => handleChangeCategory(e.target.value)}
+        >
+          <option value="all">Todos</option>
+          <option value="Sedan">Autos</option>
+          <option value="Pickups y Comerciales">Pickups y Comerciales</option>
+          <option value="SUVs">SUVs y Crossovers</option>
         </NativeSelect>
         </FormControl>
       ):

@@ -1,7 +1,6 @@
 import React from 'react';
-import Box from '@mui/material/Box';
-import {InputLabel, FormControl, NativeSelect} from '@mui/material/';
-import { SetFilterProp } from '../model/setFilterProp';
+import {Box, InputLabel, FormControl, NativeSelect} from '@mui/material/';
+import { SetFilterProp } from '../models/setFilterProp';
 
 function SelectOrder({setFilters}: SetFilterProp) {
 
@@ -26,7 +25,7 @@ function SelectOrder({setFilters}: SetFilterProp) {
           }}
           onChange={(e) => handleSort(Number(e.target.value))}
         >
-          <option value={0}>Nada</option>
+          <option value={30}>Nada</option>
           <option value={1}>De menor a mayor precio</option>
           <option value={2}>De mayor a menor precio</option>
           <option value={4}>Más nuevos primero</option>
