@@ -26,7 +26,7 @@ function CardList({ data, filters, status }: Props) {
 
   return (
     <div className="flex justify-center my-10">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-16">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-14">
         {filteredAndSorted?.length &&
           filteredAndSorted.map((vehicle: Vehicle) => (
             <Link href={`${vehicle.id}`} key={vehicle.id}>
