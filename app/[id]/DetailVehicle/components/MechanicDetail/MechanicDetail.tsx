@@ -1,6 +1,7 @@
 import React from "react";
 import { CartDetail } from "../../models/cartDetail";
 import Image from "next/image";
+import { Container } from "@mui/material";
 
 interface Props {
   data: CartDetail;
@@ -9,11 +10,11 @@ interface Props {
 function MechanicDetail({ data }: Props) {
   // console.log(data)
   return (
-    <div>
-      <div className="flex justify-evenly items-center my-20 flex-col md:flex-row">
-        <div className="md:ml-20">
-          <p className="text-xl font-semibold">{data.model_features[0].name}</p>
-          <p>{data.model_features[0].description}</p>
+    <Container>
+      <div className="flex justify-evenly  my-20 flex-col-reverse md:flex-row">
+        <div className="mt-5 md:ml-16 md:mt-16">
+          <p className="text-lg font-semibold">{data.model_features[0].name}</p>
+          <p className="text-sm">{data.model_features[0].description}</p>
         </div>
         <Image
           src={data.model_features[0].image}
@@ -23,7 +24,7 @@ function MechanicDetail({ data }: Props) {
           className="rounded-xl"
         />
       </div>
-      <div className="flex justify-evenly items-center mb-2 flex-col-reverse md:flex-row">
+      <div className="flex justify-evenly  mb-10 flex-col md:flex-row ">
         <Image
           src={data.model_features[1].image}
           alt="Image mechanic"
@@ -31,12 +32,12 @@ function MechanicDetail({ data }: Props) {
           height={100}
           className="rounded-xl"
         />
-        <div className="md:mr-20">
-          <p className="text-xl font-semibold">{data.model_features[1].name}</p>
-          <p>{data.model_features[1].description}</p>
+        <div className="mt-5 md:mr-16 md:mt-16">
+          <p className="text-lg font-semibold">{data.model_features[1].name}</p>
+          <p className="text-sm">{data.model_features[1].description}</p>
         </div>
       </div>
-    </div>
+    </Container>
   );
 }
 
