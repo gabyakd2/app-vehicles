@@ -19,13 +19,6 @@ function Filters({ setFilters }: SetFilterProp) {
     setIsMobile(window.innerWidth <= 768);
   };
 
-  const handleChangeCategory = (category: string) => {
-    setFilters((prev) => ({
-      ...prev,
-      category: category,
-    }));
-  };
-
   useEffect(() => {
     window.addEventListener("resize", handleResize);
     handleResize();
@@ -37,9 +30,9 @@ function Filters({ setFilters }: SetFilterProp) {
   return (
     <Container className="flex justify-between my-10">
       {isMobile ? (
-        <FilterMobile setFilters={setFilters}/>
+        <FilterMobile setFilters={setFilters} />
       ) : (
-        <FilterDesktop setFilters={setFilters}/>
+        <FilterDesktop setFilters={setFilters} />
       )}
       <SelectOrder setFilters={setFilters} />
     </Container>
